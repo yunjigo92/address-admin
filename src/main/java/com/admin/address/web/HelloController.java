@@ -1,6 +1,6 @@
-package com.admin.adress.web;
+package com.admin.address.web;
 
-import com.admin.adress.web.dto.HelloResponseDto;
+import com.admin.address.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

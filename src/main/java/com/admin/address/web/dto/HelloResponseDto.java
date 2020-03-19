@@ -1,4 +1,4 @@
-package com.admin.adress.web.dto;
+package com.admin.address.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

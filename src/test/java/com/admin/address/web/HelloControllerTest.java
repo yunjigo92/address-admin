@@ -1,6 +1,5 @@
-package com.admin.adress.web;
+package com.admin.address.web;
 
-import com.admin.adress.web.dto.HelloResponseDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

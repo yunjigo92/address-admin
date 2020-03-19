@@ -1,7 +1,7 @@
 package com.admin.address.web;
 
-import com.admin.address.domin.post.Posts;
-import com.admin.address.domin.post.PostsRepository;
+import com.admin.address.domain.post.Posts;
+import com.admin.address.domain.post.PostsRepository;
 import com.admin.address.web.dto.PostsSaveRequestDto;
 import com.admin.address.web.dto.PostsUpdateRequestDto;
 

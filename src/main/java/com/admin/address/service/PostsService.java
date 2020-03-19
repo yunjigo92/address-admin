@@ -1,7 +1,7 @@
 package com.admin.address.service;
 
-import com.admin.address.domin.post.Posts;
-import com.admin.address.domin.post.PostsRepository;
+import com.admin.address.domain.post.Posts;
+import com.admin.address.domain.post.PostsRepository;
 import com.admin.address.web.dto.PostsResponseDto;
 import com.admin.address.web.dto.PostsSaveRequestDto;
 import com.admin.address.web.dto.PostsUpdateRequestDto;
@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class PostsService {
     private final PostsRepository postsRepository;
 
+    @Transactional
     public Long save(PostsSaveRequestDto requestDto){
         return postsRepository.save(requestDto.toEntity()).getId();
     }

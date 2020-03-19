@@ -1,6 +1,6 @@
 package com.admin.address.web.dto;
 
-import com.admin.address.domin.post.Posts;
+import com.admin.address.domain.post.Posts;
 import lombok.Getter;
 
 @Getter

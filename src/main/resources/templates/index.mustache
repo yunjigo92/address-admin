@@ -1,13 +1,64 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>스트링부트 웹 서비스</title>
-</head>
-<body>
-    <h1>스프링 부트로 시작하는 웹서비승~~윤징~~~재미땅~~</h1>
-</body>
-</html>
+{{>layout/header}}
+<div class="page">
+{{>layout/top}}
+ <div class="page-content d-flex align-items-stretch">
+     {{>layout/side}}
+     <div class="content-inner">
+         <!-- Page Header-->
+         <header class="page-header">
+             <div class="container-fluid">
+                 <h2 class="no-margin-bottom">Tables</h2>
+             </div>
+         </header>
+         <section class="tables">
+             <div class="container-fluid">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="card">
+                             <div class="card-close">
+                                 <div class="dropdown">
+                                     <button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                                     <div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                                 </div>
+                             </div>
+                             <div class="card-header d-flex align-items-center">
+                                 <h3 class="h4">Basic Table</h3>
+                             </div>
+                             <div class="card-body">
+                                 <div class="table-responsive">
+                                     <table class="table">
+                                         <thead>
+                                         <tr>
+                                             <th>게시글번호</th>
+                                             <th>제목</th>
+                                             <th>작성자</th>
+                                             <th>최종수정일</th>
+                                         </tr>
+                                         </thead>
+                                         <tbody id="tbody">
+                                         {{#posts}}
+                                         <tr>
+                                             <td>{{id}}</td>
+                                             <td><a href="/posts/update/{{id}}">{{title}}</a> </td>
+                                             <td>{{author}}</td>
+                                             <td>{{modifiedDate}}</td>
+                                         </tr>
+                                         {{/posts}}
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <div>
+             <a class="btn btn-primary" href="/posts/save" role="button">글 등록</a>
+         </div>
+         <!-- Page Footer-->
+         {{>layout/bottom}}
+     </div>
+ </div>
+</div>
+{{>layout/footer}}

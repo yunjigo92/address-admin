@@ -36,6 +36,10 @@ dependencies {
     compile('com.h2database:h2')
     //murstache 의존성 추가!!
     compile('org.springframework.boot:spring-boot-starter-mustache')
+    //스프링 시큐리티 추가!!
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+    //test
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
    // testCompile group: 'junit', name: 'junit', version: '4.12'

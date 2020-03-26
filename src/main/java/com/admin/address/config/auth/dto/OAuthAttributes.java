@@ -33,6 +33,10 @@ public class OAuthAttributes {
     public static OAuthAttributes of(String registationId,
                                      String userNameAttributeName,
                                      Map<String,Object> attributes){
+                if("naver".equals(registationId)){
+                    return ofNaver("id",attributes);
+                }
+
         return ofGoogle(userNameAttributeName,attributes);
     }
 
@@ -46,6 +50,20 @@ public class OAuthAttributes {
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
+
+    public static OAuthAttributes ofNaver(String userNameAttributeName,Map<String,Object> attributes){
+            Map<String,Object> map = (Map<String,Object>)attributes.get("response");
+
+        return OAuthAttributes.builder()
+                .name((String)map.get("name"))
+                .email((String) map.get("email"))
+                .picture((String) map.get("profile_image"))
+                .attributes(map)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
+    }
+
+
 
     //User entity를 생성한다.
     //엔티티를 생성하는 시점이 처음 가입할때이다.

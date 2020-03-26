@@ -39,8 +39,14 @@ dependencies {
     //스프링 시큐리티 추가!!
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 
+    //session 설정을 위한 jdbc추가
+    compile('org.springframework.session:spring-session-jdbc')
+
     //test
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    //testSecurity
+    testCompile('org.springframework.security:spring-security-test')
 
    // testCompile group: 'junit', name: 'junit', version: '4.12'
 }

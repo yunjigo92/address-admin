@@ -42,6 +42,9 @@ dependencies {
     //session 설정을 위한 jdbc추가
     compile('org.springframework.session:spring-session-jdbc')
 
+    //maria db driver추가
+    compile('org.mariadb.jdbc:mariadb-java-client')
+
     //test
     testCompile('org.springframework.boot:spring-boot-starter-test')
 

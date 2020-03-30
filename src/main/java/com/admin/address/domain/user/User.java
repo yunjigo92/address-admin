@@ -1,11 +1,13 @@
 package com.admin.address.domain.user;
 
 import com.admin.address.domain.BaseTimeEntity;
+import com.admin.address.domain.address.Address;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -25,12 +27,14 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
+
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
     @Builder
-    public User(String name,String email, String picture, Role role){
+    public User(String name, String email, String picture, Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;

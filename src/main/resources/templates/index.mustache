@@ -1,5 +1,5 @@
 {{>layout/header}}
-<div class="page">
+<div class="page" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 {{>layout/top}}
  <div class="page-content d-flex align-items-stretch">
      {{>layout/side}}
@@ -23,35 +23,57 @@
                              </div>
                              <div class="card-header d-flex align-items-center">
                                  <h3 class="h4">Basic Table</h3>
+                                 <div>
+                                     <a class="btn btn-primary" href="/" role="button">전체조회</a>
+                                 </div>
+                                     {{#count}}<h3 class="h4">중복 개수 : {{count}}</h3>
+                                     <a class="btn btn-primary" id="deleteList" role="button">삭제</a>
+                                     {{/count}}
                              </div>
                              <div class="card-body">
                                  <div class="table-responsive">
                                      <table class="table">
                                          <thead>
                                          <tr>
-                                             <th>게시글번호</th>
-                                             <th>제목</th>
-                                             <th>작성자</th>
+                                           {{#count}}<th>삭제</th>{{/count}}
+                                             <th>번호</th>
+                                             <th>이름</th>
+                                             <th>이메일</th>
+                                             <th>핸드폰</th>
                                              <th>최종수정일</th>
+                                             <th></th>
                                          </tr>
                                          </thead>
                                          <tbody id="tbody">
-                                         {{#posts}}
+                                         {{#address}}
                                          <tr>
-                                             <td>{{id}}</td>
-                                             <td><a href="/posts/update/{{id}}">{{title}}</a> </td>
-                                             <td>{{author}}</td>
-                                             <td>{{modifiedDate}}</td>
+                                             {{#count}}<td><input type="checkbox" name="deleteIds" id="deleteCheck" value="{{addressId}}"></td>{{/count}}
+                                             {{#addressId}}<td>{{addressId}}</td>{{/addressId}}
+                                             {{#addressName}}<td><a href="/address/overlapName/{{addressName}}">{{addressName}}</a></td>{{/addressName}}
+                                             {{#addressEmail}}<td><a href="/address/overlapEmail/{{addressEmail}}">{{addressEmail}}</a></td> {{/addressEmail}}
+                                             {{#addressPhone}}<td><a href="/address/overlapPhone/{{addressPhone}}">{{addressPhone}}</a></td>{{/addressPhone}}
+                                             {{#modifiedDate}}<td>{{modifiedDate}}</td>{{/modifiedDate}}
+                                             <td><a href="/address/update/{{addressId}}" role="button" class="btn btn-primary">상세</a>
                                          </tr>
-                                         {{/posts}}
+                                         {{/address}}
                                          </tbody>
                                      </table>
                                  </div>
                                  <div align="right">
                                      <div class="col-sm-4 offset-sm-3">
-                                         <a class="btn btn-primary" href="/posts/save" role="button">Regist</a>
+                                         <a class="btn btn-primary" href="/address/save" role="button">주소록 추가</a>
                                      </div>
                                  </div>
+                             </div>
+                             <div>
+                                 <ul class="pager">
+                                         <li class="previous">
+                                             <a href="?page="{{address.size}}-1>&larr; Newer Posts</a>
+                                         </li>
+                                         <li class="next">
+                                             <a href="?page="{{address.size}}+1>Older Posts &rarr;</a>
+                                         </li>
+                                 </ul>
                              </div>
                          </div>
                      </div>

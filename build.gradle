@@ -11,6 +11,7 @@ buildscript {
     }
 }
 
+
 apply plugin :'java'
 apply plugin :'eclipse'
 apply plugin :'org.springframework.boot'
@@ -39,11 +40,18 @@ dependencies {
     //스프링 시큐리티 추가!!
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 
+
+    //mysql db 연동
+    runtime('mysql:mysql-connector-java')
+
+    //jdbc추가
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+
     //session 설정을 위한 jdbc추가
     compile('org.springframework.session:spring-session-jdbc')
 
-    //maria db driver추가
-    compile('org.mariadb.jdbc:mariadb-java-client')
+    //my batis추가
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1")
 
     //test
     testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -53,3 +61,4 @@ dependencies {
 
    // testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+

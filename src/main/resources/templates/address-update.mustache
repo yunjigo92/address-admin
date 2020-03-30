@@ -1,0 +1,74 @@
+{{>layout/header}}
+<div class="page">
+{{>layout/top}}
+ <div class="page-content d-flex align-items-stretch">
+     {{>layout/side}}
+     <div class="content-inner">
+         <!-- Page Header-->
+         <header class="page-header">
+             <div class="container-fluid">
+                 <h2 class="no-margin-bottom">Forms</h2>
+             </div>
+         </header>
+         <!-- Forms Section-->
+         <section class="forms">
+             <div class="container-fluid">
+                 <div class="row">
+                     <!-- Form Elements -->
+                     <div class="col-lg-12">
+                         <div class="card">
+                             <div class="card-close">
+                                 <div class="dropdown">
+                                     <button type="button" id="closeCard5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                                     <div aria-labelledby="closeCard5" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                                 </div>
+                             </div>
+                             <div class="card-header d-flex align-items-center">
+                                 <h3 class="h4">All form elements</h3>
+                             </div>
+                             <div class="card-body">
+                                 <form class="form-horizontal">
+                                     <div class="row">
+                                         <label class="col-sm-3 form-control-label">Material Inputs</label>
+                                         <div class="col-sm-9">
+                                             <div class="form-group-material">
+                                                 <input id="addressId"  value="{{address.addressId}}" type="text" name="addressId" readonly class="input-material">
+                                                 <label for="addressId" class="label-material">id</label>
+                                             </div>
+                                             <div class="form-group-material">
+                                                 <input id="addressName"  value="{{address.addressName}}" type="text" name="addressName" class="input-material">
+                                                 <label for="addressName" class="label-material">name</label>
+                                             </div>
+                                             <div class="form-group-material">
+                                                 <input id="addressEmail" value="{{address.addressEmail}}" type="email" name="addressEmail" class="input-material">
+                                                 <label for="addressEmail" class="label-material">email</label>
+                                             </div>
+                                             <div class="form-group-material">
+                                                 <input id="addressPhone" value="{{address.addressPhone}}" type="tel" name="addressPhone" class="input-material">
+                                                 <label for="addressPhone" class="label-material">phone</label>
+                                             </div>
+                                             <!--<div class="form-group-material">
+                                                 <textarea id="content" type="text" rows="5" name="content" required class="form-control"></textarea>
+                                             </div>-->
+                                         </div>
+                                     </div>
+                                     <div align="right">
+                                         <div>
+                                             <a href="/" role="button" class="btn btn-secondary">취소</a>
+                                             <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+                                             <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+                                         </div>
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <!-- Page Footer-->
+         {{>layout/bottom}}
+     </div>
+ </div>
+</div>
+{{>layout/footer}}

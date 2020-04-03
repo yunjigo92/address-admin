@@ -1,9 +1,7 @@
 package com.admin.address.web.dto;
 
 import com.admin.address.domain.address.Address;
-import com.admin.address.domain.post.Posts;
 
-import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 public class AddressListResponseDto {

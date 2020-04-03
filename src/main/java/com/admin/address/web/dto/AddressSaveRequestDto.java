@@ -1,7 +1,6 @@
 package com.admin.address.web.dto;
 
 import com.admin.address.domain.address.Address;
-import com.admin.address.domain.post.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -50,12 +50,11 @@ dependencies {
     //session 설정을 위한 jdbc추가
     compile('org.springframework.session:spring-session-jdbc')
 
-    //my batis추가
-    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1")
-
     //test
     testCompile('org.springframework.boot:spring-boot-starter-test')
-
+    //aop추가
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.aspectj:aspectjrt')
     //testSecurity
     testCompile('org.springframework.security:spring-security-test')
 
